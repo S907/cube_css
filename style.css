@@ -1,0 +1,61 @@
+*,
+::before,
+::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    background: rgb(61, 112, 92);
+}
+
+.container{
+    width: 200px;
+    height:200px;
+    perspective:1000px;
+    margin: 100px auto 0;
+}
+
+.cube{
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    position: relative; 
+    animation: spin 6s infinite linear;
+} 
+
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(0deg, rgb(58, 23, 212) 0px, rgba(18, 39, 223, 0.979) 1px,transparent 1px, transparent 21px),repeating-linear-gradient(90deg, rgba(19, 39, 226, 0.993) 0px, rgba(25, 80, 199, 0.986) 1px,transparent 1px, transparent 21px),linear-gradient(90deg, rgb(16, 48, 153),rgb(37, 34, 165));
+
+}
+
+.top{transform: rotateX(90deg) translateZ(100px); 
+}
+
+.bottom{transform: rotateX(-90deg) translateZ(100px); 
+}
+
+.right{transform: rotateX(90deg) translateZ(100px); 
+}
+.left{transform: rotateX(-90deg) translateZ(100px); 
+}
+
+.front{transform: rotateX(0deg) translateZ(100px); 
+}
+
+.back{transform: rotateX(180deg) translateZ(6.25em); 
+}
+
+@keyframes spin{
+    from{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
